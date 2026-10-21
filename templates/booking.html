@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% if message %} 
+<p class="error">{{ message }}</p> 
+{% endif %} 
+<h1>Make a booking</h1>
+<form method="POST" action="{{ url_for('booking') }}">
+    <label for="booking_type">Choose a booking</label>
+    <select id="booking_type" name="booking_type" required>
+        <option value="">-- Select an option --</option>
+        <option value="Adult">Adult</option>
+        <option value="Child">Child</option>
+        <option value="Student">Student</option>
+    </select>
+    <button type="submit">Book now</button>
+</form>
+
+{% for booking in bookings %}   
+    <p>{{ booking }} </p>
+{%  endfor %}
+
+{% endblock %}

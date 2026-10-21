@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>RZA</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head> 
+<body> 
+ 
+<nav> 
+    <a href="/">Home</a> 
+    <a href="/about">About</a> 
+    <a href="/contact">Contact</a> 
+    <a href="/education">Education</a> 
+    {% if session.get('username') %}
+        <a href="{{ url_for('booking') }}">Booking</a>
+        <span>Welcome, {{ session.get('username') }}</span>
+        <a href="{{ url_for('logout') }}">Log out</a>
+    {% else %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Log in</a>
+    {% endif %}
+</nav> 
+ 
+{% block content %} 
+{% endblock %} 
+ 
+</body> 
+</html> 

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+ 
+{% block content %} 
+    <h1>Rigit zoo</h1>
+    {% if session.get('username') %}
+        <h2>Welcome back, {{ session.get('username') }}!</h2>
+        <p>You are logged in.</p>
+    {% else %}
+        <h2>Welcome to the website!</h2>
+        <p>Please log in to see your personalised welcome.</p>
+    {% endif %}
+{% endblock %}
