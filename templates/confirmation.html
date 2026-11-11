@@ -1,0 +1,55 @@
+{% extends "base.html" %} 
+ 
+{% block content %} 
+ 
+<div class="container my-5"> 
+ 
+    <div class="row justify-content-center"> 
+ 
+        <div class="col-md-7"> 
+ 
+            <div class="card shadow p-5 text-center"> 
+ 
+                <h1 class="text-success"> 
+                    Purchase Successful! 
+                </h1> 
+ 
+                <h2>Thank you for your booking.</h2> 
+ 
+                <p class="lead mt-3"> 
+ 
+                    Your zoo tickets have been purchased 
+                    successfully. 
+ 
+                </p> 
+ 
+                <p> 
+ 
+                    Booking reference: 
+ 
+                    <strong>{{ booking_id }}</strong> 
+ 
+                </p> 
+ 
+                <p class="text-muted"> 
+ 
+                    Your booking status is now Paid. 
+ 
+                </p> 
+ 
+                <a href="{{ url_for('index') }}" 
+                   class="btn btn-success btn-lg mt-3"> 
+ 
+                    Return to Homepage 
+ 
+                </a> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</div> 
+ 
+{% endblock %} 

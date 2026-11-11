@@ -1,13 +1,149 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
  
 {% block content %} 
-    <h1>Rigit zoo</h1>
-    {% if session.get('username') %}
-        <h2>Welcome back, {{ session.get('username') }}!</h2>
-        <p>You are logged in.</p>
-    {% else %}
-        <h2>Welcome to the website!</h2>
-        <p>Please log in to see your personalised welcome.</p>
-    {% endif %}
-{% endblock %}
+ 
+<!-- Hero section --> 
+ 
+<section class="hero-section"> 
+ 
+    <div class="hero-content"> 
+ 
+        <h1>Discover the Wild at RigIt Zoo</h1> 
+ 
+        <p> 
+            Explore amazing animals, discover new experiences 
+            and enjoy a fantastic family day out. 
+        </p> 
+ 
+        <a href="/booking" class="btn btn-zoo btn-lg"> 
+            Book Your Visit 
+        </a> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- Welcome section --> 
+ 
+<section class="container my-5"> 
+ 
+    <div class="text-center"> 
+ 
+        <h2>Welcome to RigIt Zoo</h2> 
+ 
+        <p class="lead"> 
+            Come and discover an incredible range of animals 
+            from around the world. 
+        </p> 
+ 
+    </div> 
+ 
+</section> 
+ 
+<!-- Animal section --> 
+ 
+<section class="container my-5"> 
+ 
+    <h2 class="text-center mb-4"> 
+        Meet Our Animals 
+    </h2> 
+ 
+    <div class="row g-4"> 
+ 
+        <!-- Lion card --> 
+ 
+        <div class="col-md-4"> 
+ 
+            <div class="card animal-card h-100"> 
+ 
+                <img src="/static/images/lion.jpg" 
+                     class="card-img-top" 
+                     alt="Lion"> 
+ 
+                <div class="card-body"> 
+ 
+                    <h5 class="card-title">African Lion</h5> 
+ 
+                    <p class="card-text"> 
+                        Discover the king of the jungle 
+                        and learn about these incredible animals. 
+                    </p> 
+ 
+                    <a href="/animals/lion" 
+                       class="btn btn-zoo"> 
+                        Find Out More 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <!-- Elephant card --> 
+ 
+        <div class="col-md-4"> 
+ 
+            <div class="card animal-card h-100"> 
+ 
+                <img src="/static/images/elephant.jpg" 
+                     class="card-img-top" 
+                     alt="Elephant"> 
+ 
+                <div class="card-body"> 
+ 
+                    <h5 class="card-title">African Elephant</h5> 
+ 
+                    <p class="card-text"> 
+                        Learn about the world's largest 
+                        land animals. 
+                    </p> 
+ 
+                    <a href="/animals/elephant" 
+                       class="btn btn-zoo"> 
+                        Find Out More 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <!-- Giraffe card --> 
+ 
+        <div class="col-md-4"> 
+ 
+            <div class="card animal-card h-100"> 
+ 
+                <img src="/static/images/giraffe.jpg" 
+                     class="card-img-top" 
+                     alt="Giraffe"> 
+ 
+                <div class="card-body"> 
+ 
+                    <h5 class="card-title">Giraffe</h5> 
+ 
+                    <p class="card-text"> 
+                        Discover how giraffes use their 
+                        incredible height to survive. 
+                    </p> 
+ 
+                    <a href="/animals/giraffe" 
+                       class="btn btn-zoo"> 
+                        Find Out More 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+{% endblock %} 

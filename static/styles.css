@@ -1,0 +1,156 @@
+/* Main website colour scheme */ 
+ 
+:root { 
+    --primary-colour: #234B35; 
+    --secondary-colour: #38734A; 
+    --light-green: #EAF3E9; 
+    --cream: #FAF8F0; 
+    --dark-text: #333333; 
+    --white: #FFFFFF; 
+} 
+ 
+/* Main website styling */ 
+ 
+body { 
+    background-color: var(--cream); 
+    color: var(--dark-text); 
+    font-family: Arial, sans-serif; 
+} 
+ 
+/* Main headings */ 
+ 
+h1, h2, h3 { 
+    color: var(--primary-colour); 
+} 
+ 
+/* Main buttons */ 
+ 
+.btn-zoo { 
+    background-color: var(--secondary-colour); 
+    color: white; 
+    border: none; 
+    padding: 12px 24px; 
+    border-radius: 6px; 
+} 
+ 
+.btn-zoo:hover { 
+    background-color: var(--primary-colour); 
+    color: white; 
+} 
+
+/* Navigation bar */ 
+ 
+.zoo-navbar { 
+    background-color: var(--primary-colour); 
+    padding: 15px; 
+} 
+ 
+/* Website name */ 
+ 
+.navbar-brand { 
+    font-size: 24px; 
+    letter-spacing: 1px; 
+} 
+ 
+/* Navigation links */ 
+ 
+.zoo-navbar .nav-link { 
+    color: white; 
+    margin-left: 12px; 
+    font-weight: 500; 
+} 
+ 
+/* Hover effect */ 
+ 
+.zoo-navbar .nav-link:hover { 
+    color: #C8E6C9; 
+} 
+
+/* Homepage hero section */ 
+ 
+.hero-section { 
+ 
+    background-image: 
+        linear-gradient( 
+            rgba(0, 0, 0, 0.45), 
+            rgba(0, 0, 0, 0.45) 
+        ), 
+        url("/static/images/hero.jpg"); 
+ 
+    background-size: cover; 
+    background-position: center; 
+ 
+    min-height: 500px; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+ 
+    text-align: center; 
+ 
+    color: white; 
+} 
+ 
+/* Hero text */ 
+ 
+.hero-content { 
+    max-width: 750px; 
+    padding: 30px; 
+} 
+ 
+.hero-content h1 { 
+    color: white; 
+    font-size: 48px; 
+    font-weight: bold; 
+} 
+ 
+.hero-content p { 
+    font-size: 20px; 
+    margin: 20px 0; 
+} 
+
+/* Animal cards */ 
+ 
+.animal-card { 
+ 
+    border: none; 
+ 
+    border-radius: 12px; 
+ 
+    overflow: hidden; 
+ 
+    background-color: white; 
+ 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10); 
+ 
+    transition: transform 0.3s; 
+ 
+} 
+ 
+/* Card photographs */ 
+ 
+.animal-card img { 
+ 
+    height: 230px; 
+ 
+    object-fit: cover; 
+ 
+} 
+ 
+/* Hover effect */ 
+ 
+.animal-card:hover { 
+ 
+    transform: translateY(-5px); 
+ 
+} 
+ 
+/* Card headings */ 
+ 
+.animal-card h5 { 
+ 
+    color: var(--primary-colour); 
+ 
+    font-weight: bold; 
+ 
+} 

@@ -1,0 +1,89 @@
+{% extends "base.html" %} 
+ 
+{% block content %} 
+ 
+<div class="container my-5"> 
+ 
+    <h1 class="text-center mb-4"> 
+        Your Booking Summary 
+    </h1> 
+ 
+    <div class="row justify-content-center"> 
+ 
+        <div class="col-md-7"> 
+ 
+            <div class="card shadow p-4"> 
+ 
+                <h3>Booking Details</h3> 
+ 
+                <hr> 
+ 
+                <p> 
+                    <strong>Booking reference:</strong> 
+                    {{ booking.booking_id }} 
+                </p> 
+ 
+                <p> 
+                    <strong>Ticket type:</strong> 
+                    {{ booking.ticket_name }} 
+                </p> 
+ 
+                <p> 
+                    <strong>Price per ticket:</strong> 
+                    £{{ "%.2f"|format(booking.unit_price) }} 
+                </p> 
+ 
+                <p> 
+                    <strong>Quantity:</strong> 
+                    {{ booking.quantity }} 
+                </p> 
+ 
+                <hr> 
+ 
+                <h3 class="text-end"> 
+ 
+                    Total: 
+                    £{{ "%.2f"|format(booking.total_price) }} 
+ 
+                </h3> 
+ 
+                <hr> 
+ 
+                {% if booking.status == 'Pending' %} 
+ 
+                <form method="POST" 
+                      action="{{ url_for('pay', booking_id=booking.booking_id) }}"> 
+ 
+                    <button type="submit" 
+                            class="btn btn-success btn-lg w-100"> 
+ 
+                        Pay Now 
+ 
+                    </button> 
+ 
+                </form> 
+ 
+                {% else %} 
+ 
+                <p class="text-success"> 
+                    This booking has already been paid. 
+                </p> 
+ 
+                {% endif %} 
+ 
+                <a href="{{ url_for('booking') }}" 
+                   class="btn btn-outline-secondary mt-3"> 
+ 
+                    Make Another Booking 
+ 
+                </a> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</div> 
+ 
+{% endblock %} 

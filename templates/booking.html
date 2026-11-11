@@ -1,22 +1,98 @@
-{% extends "base.html" %}
-{% block content %}
-{% if message %} 
-<p class="error">{{ message }}</p> 
-{% endif %} 
-<h1>Make a booking</h1>
-<form method="POST" action="{{ url_for('booking') }}">
-    <label for="booking_type">Choose a booking</label>
-    <select id="booking_type" name="booking_type" required>
-        <option value="">-- Select an option --</option>
-        <option value="Adult">Adult</option>
-        <option value="Child">Child</option>
-        <option value="Student">Student</option>
-    </select>
-    <button type="submit">Book now</button>
-</form>
-
-{% for booking in bookings %}   
-    <p>{{ booking }} </p>
-{%  endfor %}
-
-{% endblock %}
+{% extends "base.html" %} 
+ 
+{% block content %} 
+ 
+<div class="container my-5"> 
+ 
+    <h1 class="text-center mb-4"> 
+        Book Your Zoo Tickets 
+    </h1> 
+ 
+    <p class="text-center"> 
+        Choose your tickets and select how many you need. 
+    </p> 
+ 
+    <div class="row justify-content-center"> 
+ 
+        <div class="col-md-7"> 
+ 
+            <div class="card shadow p-4"> 
+ 
+                <form method="POST" 
+                      action="{{ url_for('booking') }}"> 
+ 
+                    <!-- Ticket type --> 
+ 
+                    <div class="mb-3"> 
+ 
+                        <label class="form-label" 
+                               for="ticket_id"> 
+                            Select ticket type 
+                        </label> 
+ 
+                        <select class="form-select" 
+                                name="ticket_id" 
+                                id="ticket_id" 
+                                required> 
+ 
+                            <option value=""> 
+                                Choose a ticket 
+                            </option> 
+ 
+                            {% for ticket in tickets %} 
+ 
+                            <option value="{{ ticket.ticket_id }}"> 
+ 
+                                {{ ticket.ticket_name }} 
+                                - £{{ "%.2f"|format(ticket.price) }} 
+ 
+                            </option> 
+ 
+                            {% endfor %} 
+ 
+                        </select> 
+ 
+                    </div> 
+ 
+ 
+                    <!-- Quantity --> 
+ 
+                    <div class="mb-4"> 
+ 
+                        <label class="form-label" 
+                               for="quantity"> 
+                            Number of tickets 
+                        </label> 
+ 
+                        <input type="number" 
+                               class="form-control" 
+                               name="quantity" 
+                               id="quantity" 
+                               min="1" 
+                               max="20" 
+                               value="1" 
+                               required> 
+ 
+                    </div> 
+ 
+ 
+                    <!-- Submit button --> 
+ 
+                    <button type="submit" 
+                            class="btn btn-success btn-lg w-100"> 
+ 
+                        Continue to Summary 
+ 
+                    </button> 
+ 
+                </form> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</div> 
+ 
+{% endblock %} 
